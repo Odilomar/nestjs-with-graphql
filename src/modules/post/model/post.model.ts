@@ -8,6 +8,9 @@ export class Post {
   @Field()
   title: string;
 
-  @Field(() => Int, { nullable: true })
-  votes?: number;
+  @Field(() => Int)
+  votes: number;
+
+  @Field(() => Int)
+  authorId: number;
 }
