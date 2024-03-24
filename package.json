@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "generate:env": "cp .example.env .env"
+    "generate:env": "cp .example.env .env",
+    "clean": "rm -rf node_modules"
   },
   "dependencies": {
     "@apollo/server": "^4.10.2",
