@@ -6,13 +6,13 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'postgres',
-        host: 'localhost',
-        port: 5432,
-        username: 'admin',
-        password: 'admin',
-        database: 'nestjs_with_graphql_db',
+        host: process.env.DB_HOST,
+        port: parseInt(process.env.DB_PORT) || 5432,
+        username: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        synchronize: true,
+        synchronize: Boolean(process.env.TYPEORM_SYNCRONIZE) || false,
       });
 
       return dataSource.initialize();
