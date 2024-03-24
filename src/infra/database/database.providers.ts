@@ -8,9 +8,9 @@ export const databaseProviders = [
         type: 'postgres',
         host: 'localhost',
         port: 5432,
-        username: 'root',
-        password: 'root',
-        database: 'test',
+        username: 'admin',
+        password: 'admin',
+        database: 'nestjs_with_graphql_db',
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
       });
