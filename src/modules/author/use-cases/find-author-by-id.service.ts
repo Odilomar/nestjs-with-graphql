@@ -11,6 +11,6 @@ export class FindAuthorByIdService {
   ) {}
 
   execute(id: number) {
-    return this.authorRepository.findOneBy({ id });
+    return this.authorRepository.findOneByOrFail({ id });
   }
 }

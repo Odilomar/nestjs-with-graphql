@@ -18,7 +18,7 @@ export class AuthorsResolver {
     private readonly findPostsService: FindPostsService,
   ) {}
 
-  @Query((returns) => Author)
+  @Query((returns) => Author, { name: 'author' })
   async getAuthor(@Args('id', { type: () => Int }) id: number) {
     return this.findAuthorByIdService.execute(id);
   }
